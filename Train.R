@@ -30,6 +30,6 @@ Fit1 <- train(Survived~., method = "gbm",
              trControl = ctrl)
 
 
-Table_Results <- data.frame(Accuracy_Train = confusionMatrix(predict(Fit1, Train), reference = as.factor(Train$Survived))$overall[1], Accuracy_Test = confusionMatrix(predict(Fit1, Test), reference = as.factor(Test$Survived))$overall[1])
+Table_Results <- confusionMatrix(predict(Fit1, Test), reference = as.factor(Test$Survived))$overall[1]
 
 write.table(Table_Results, file = 'metrics.txt', col.names = FALSE, row.names = FALSE)

@@ -27,4 +27,4 @@ jobs:
           Rscript Train.R
           # Write your CML report
           echo "MODEL METRICS"
-          # cat metrics.txt 
+          cat metrics.txt 
