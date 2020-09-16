@@ -11,3 +11,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 We are going to use it to test machine learning on the titanic dataset
 
+## File that runs the machine learning part, and creates the table with metrics
+
+
