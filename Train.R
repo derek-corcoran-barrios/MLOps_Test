@@ -1,8 +1,9 @@
-library(gbm)
 library(caret)
-library(dplyr)
+library(gbm)
 
-Titanic <- read_csv("data/Titanic.csv") %>% mutate(Survived = ifelse(Survived == 1, "Yes", "No")) %>% dplyr::select(-Name, -PassengerId, - Ticket, -Cabin)
+Titanic <- read.csv("data/Titanic.csv") 
+Titanic$Survived <- ifelse(Titanic$Survived == 1, "Yes", "No")
+Titanic <-  Titanic[,-c(1,4,9, 11)]
 
 Titanic <- Titanic[complete.cases(Titanic),]
 
