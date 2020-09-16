@@ -15,7 +15,6 @@ jobs:
         run: |
           # Install miic and dependencies
           R --silent -e "install.packages(c(\"gbm\", \"caret\", \"Rcpp\"))"
-          R CMD INSTALL . --preclean
           cd ..
           # Install Python packages
           pip install --upgrade pip
