@@ -15,17 +15,16 @@ jobs:
         run: |
           # Install packages and dependencies
           R --silent -e "install.packages(c(\"gbm\", \"caret\", \"Rcpp\"))"
-          cd ..
           # Install Python packages
           pip install --upgrade pip
           pip install wheel
           pip install PyDrive2==1.6.0 --use-feature=2020-resolver
           # Install DVC
-          wget -c https://github.com/iterative/dvc/releases/download/1.4.0/dvc_1.4.0_amd64.deb
-          sudo apt install ./dvc_1.4.0_amd64.deb
+          wget -c https://github.com/iterative/dvc/releases/download/1.4.0/dvc_1.7.2_amd64.deb
+          sudo apt install ./dvc_1.7.2_amd64.deb
           # Run DVC
           dvc pull
           Rscript Train.R
           # Write your CML report
           echo "MODEL METRICS"
-          # cat metrics.txt
+          # cat metrics.txt 
