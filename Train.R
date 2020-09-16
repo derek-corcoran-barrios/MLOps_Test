@@ -1,6 +1,6 @@
 library(gbm)
 library(caret)
-library(tidyverse)
+library(dplyr)
 
 Titanic <- read_csv("data/Titanic.csv") %>% mutate(Survived = ifelse(Survived == 1, "Yes", "No")) %>% dplyr::select(-Name, -PassengerId, - Ticket, -Cabin)
 
