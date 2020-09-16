@@ -32,4 +32,8 @@ Fit1 <- train(Survived~., method = "gbm",
 
 Table_Results <- confusionMatrix(predict(Fit1, Test), reference = as.factor(Test$Survived))$overall[1]
 
+png("Fit.png")
+plot(Fit1)
+dev.off()
+
 write.table(Table_Results, file = 'metrics.txt', col.names = FALSE, row.names = FALSE)

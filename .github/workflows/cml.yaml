@@ -20,11 +20,13 @@ jobs:
           pip install wheel
           pip install PyDrive2==1.6.0 --use-feature=2020-resolver
           # Install DVC
-          wget -c https://github.com/iterative/dvc/releases/download/1.4.0/dvc_1.7.2_amd64.deb
+          wget -c https://github.com/iterative/dvc/releases/download/1.7.2/dvc_1.7.2_amd64.deb
           sudo apt install ./dvc_1.7.2_amd64.deb
           # Run DVC
           dvc pull
           Rscript Train.R
           # Write your CML report
-          echo "MODEL METRICS"
-          cat metrics.txt 
+          echo "##MODEL METRICS" > report.md
+          cat metrics.txt >> report.md
+          
+          cml-publish Fit.png --md >> report.md
