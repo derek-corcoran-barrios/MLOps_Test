@@ -13,7 +13,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
         run: |
-          # Install miic and dependencies
+          # Install packages and dependencies
           R --silent -e "install.packages(c(\"gbm\", \"caret\", \"Rcpp\"))"
           cd ..
           # Install Python packages
@@ -28,4 +28,4 @@ jobs:
           Rscript Train.R
           # Write your CML report
           echo "MODEL METRICS"
-          cat metrics.txt
+          # cat metrics.txt
