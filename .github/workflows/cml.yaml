@@ -28,5 +28,3 @@ jobs:
           # Write your CML report
           echo "##MODEL METRICS" > report.md
           cat metrics.txt >> report.md
-          
-          cml-publish Fit.png --md >> report.md
